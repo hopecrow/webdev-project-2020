@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Report</title>
+	<link rel="stylesheet" type="text/css" href="CSS/Style.css" /> 
+	<link rel="scortcut icon" type="image/png" sizes="16x16" href="Images/favicon-16x16.png">
+</head>
+<body>
+	<!-- Navigation	-->
+	<div class="navbar">
+		<a href="Home.jsp">Home</a>
+		<a href="Search.jsp"">Search</a> 
+		<a href="MakeDate.jsp"">Plan Date</a> 
+		<a href="SentDate.jsp"">Sent Dates</a>
+		<a href="ReceivedDate.jsp"">Received Dates</a>
+		<a href="Profile.jsp">Profile</a> 
+		<a href="Report.html">Report</a> 
+	</div>
+	
+	<h1>Web Application Development Report For Online Dating System</h1>
+	<h2>Created by Christian Hope Crow (student number: 15115160)</h2>
+	<h3>SQL Code:</h3>
+	<h4>Creating table CCMembers:</h4>
+	<h5>
+		CREATE TABLE CCMembers (
+		id NUMBER GENERATED ALWAYS AS IDENTITY,
+		firstname varchar(255),
+		lastname varchar(255),
+		username varchar(255) NOT NULL,
+		password varchar(255),
+		gender varchar(255),
+		age integer,
+		county varchar(255),
+		bio varchar(4000),
+		UNIQUE (username),
+		PRIMARY KEY (id))
+	</h5>
+	
+	<h4>Populating table CCMembers:</h4>
+	<h5>
+	INSERT INTO CCMembers (firstname, lastname, username, password, gender, age, county, bio) VALUES ('Mary', 'Smith', 'msmith', 'password', 'Female', '30', 'Dublin', 'Petite, Blonde, and ready to party')
+	<br>
+	INSERT INTO CCMembers (firstname, lastname, username, password, gender, age, county, bio) VALUES ('Jane', 'Doe', 'janey1234', 'pass', 'Female', '19', 'Cavan', 'Young brown haired girl')
+	<br>
+	INSERT INTO CCMembers (firstname, lastname, username, password, gender, age, county, bio) VALUES ('Pam', 'McMann', 'partylady', '123456', 'Female', '40', 'Dublin', 'Looking for my 3rd husband')
+	<br>
+	INSERT INTO CCMembers (firstname, lastname, username, password, gender, age, county, bio) VALUES ('Dusty', 'McMann', 'theduster', '123456', 'Male', '70', 'Wicklow', 'Love running on the beach')
+	<br>
+	INSERT INTO CCMembers (firstname, lastname, username, password, gender, age, county, bio) VALUES ('Dan', 'Cow', 'mooman', 'password', 'Male', '24', 'Wicklow', 'If you could not guess I own my own farm!')
+	<br>
+	INSERT INTO CCMembers (firstname, lastname, username, password, gender, age, county, bio) VALUES ('Male', 'Test', 'Tester', 'test', 'Male', '35', 'Dublin', 'This is a test account')
+	<br>
+	INSERT INTO CCMembers (firstname, lastname, username, password, gender, age, county, bio) VALUES ('Lady', 'Test', 'Test', 'test', 'Female', '35', 'Dublin', 'This is a lady test account')
+	</h5>
+	
+	<h4>Creating table CCDates:</h4>
+	<h5>
+		CREATE TABLE CCDates (
+		id NUMBER GENERATED ALWAYS AS IDENTITY,
+		asker varchar(255),
+		askee varchar(255),
+		location varchar(255),
+		day integer,
+		month integer,
+		year integer,
+		hour integer,
+		min integer,
+		ampm varchar(255),
+		status varchar(255),
+		PRIMARY KEY (id))
+	</h5>
+	
+	<h4>Populating table CCDates:</h4>
+	<h5>
+	INSERT INTO CCDates (asker, askee, location, day, month, year, hour, min, ampm, status) VALUES ('Tester', 'Test', 'Nandos', '15', '10', '2020', '1', '20', 'Pm', 'Pending')
+	<br>
+	INSERT INTO CCDates (asker, askee, location, day, month, year, hour, min, ampm, status) VALUES ('Test', 'Tester', 'The Arcade', '7', '3', '2021', '11', '30', 'Am', 'Pending')
+	<br>
+	INSERT INTO CCDates (asker, askee, location, day, month, year, hour, min, ampm, status) VALUES ('Test', 'Tester', 'New York', '1', '1', '2021', '10', '00', 'Am', 'Accepted')
+	</h5>
+	
+	<h3>Login Details:</h3>
+	<h5>
+	A Personal login can be created using the registration page, but two accounts have already been created for the purpose of testing. 
+	As for the full funcationally of the tester it is recommended to use two profiles for purposes such as having someone to send date information and having someone to recieve the date information.
+	<br><br>
+	Account 1: <br> Username: Tester <br> Password: test
+	<br><br>
+	Account 2: <br> Username: Test <br> Password: test
+	<br><br>
+	More information about these users can be found in the data table or by looking at the population statement in the SQL section above.
+	Both of these users already have sent and received date information for the purpose of testing.
+	</h5>
+	
+	<h3>Description of the Application:</h3>
+	<h4>Overall:</h4>
+	<h5>
+	This web application is a online dating application. Users can register a new account or login with an existing account.
+	Once logged in a user can navigate the application using the navigation bar located through out the application. 
+	From here a user can view their dating "Profile" or even "Search" other users to date based on their gender, age, and county. 
+	They can then take the username of a user they like and plan a date ("Plan Date") with the user proposing a location, day, and time. 
+	The user can keep track of the dates they have sent and the status of their invitations by checking out "Sent Dates".
+	On the other hand a user can use "Received Dates" to view invitations they have recieved and accept or reject these invitations. 
+	This page can also be used to view dates already accepted or rejects for future notice. 
+	The user can also logout anytime while using this application once they are logged in. 
+	</h5>
+	<h4>Page Descriptions:</h4>
+	<h5>
+	- index.jsp: The index page is used as the login page as this is the first page users will access on this site,
+	upon entering a users login detail a session is created and the user is redirected to the homepage of the application. 
+	Unless the user is already logged into an active session then the user will be automatically redirected to the homepage.
+	<br>- Register.jsp: Very similar to the login page of the application, but instead of retreving information from the database,
+	the application is adding a new users information into the database. Once registed successfully the user will be asked to go login. 
+	<br>- Home.jsp: This is the first page users will access once logged in, it introduces the website and allows the user to navigate the website using a navigation bar. 
+	<br>- logout.jsp: this can be called from all places in the application once the user is logged in by selecting logout in the navigation bar.
+	This short jsp code invalidates the session and redirects the user back to the login screen.
+	<br>- Profile.jsp: Displays the users profile information using session attributes, this being the same information other users will see when searching. 
+	<br>- Search.jsp: This form allows a user to search other users that are using the applcation by gender, age, and location. 
+	<br>- SearchResults.jsp: Displays all users that fit the critia of the users search query.
+	<br>- MakeDate.jsp: Inculdes a form that allows users to send a date invitation to another user, storing the information in the database. 
+	<br>- SentDate.jsp: Allows a user to see all of the date invitations they have sent out and the status of these invitations.
+	This page also uses two prepared statements and database relations beteen the username in CCMembers table and the askee in CCDates table.
+	<br>- ReceivedDate.jsp: Allows a user to see what date invitations they have recieved, and then accept or reject their invitations, along with displaying date invitations they have already accepted and rejected. 
+	This page also uses four prepared statements and database relations beteen the username in CCMembers table and the asker in CCDates table.
+	<br>- Style.css: This is the css style sheet that was externally used to style the html content of the jsp pages.
+	</h5>
+
+	
+	<h3>Bonus Features:</h3>
+	<h5>
+	- A User can not access any of the website except for the login, registration, and report pages without first logging into an account, 
+	trying to access any other page will kick the user back to the login page. 
+	<br>
+	- All forms in the application use required fields to make sure that the user fills in all the needed information
+	<br>
+	- A mutual navigation bar is avliable throughout the website so that a user can easily access any feature that they want quickly
+	<br>
+	- A free stock image was included on the homepage of the website to make the application look more inviting to the user
+	<br>
+	- bright colours were used to contrast dark colours in the application to make it more accessible friendly for users
+	<br>
+	- Number fields like age, time, etc. have max and min values to help stop users from making mistakes or entering incorrect values.
+	<br>
+	- The RecievedDate.jsp includes 4 different prepared statements within one page to preform multiple selects based on database relations 
+	and also includes two update statements for chaging the status of date invitations. 
+	<br>
+	- Form sizes are responsive to the size of the browser being used.
+	</h5>
+</body>
+</html>

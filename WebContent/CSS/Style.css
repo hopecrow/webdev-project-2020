@@ -1,0 +1,132 @@
+@charset "ISO-8859-1";
+h1{ 
+	font-family: Arial, Verdana; 
+	font-style: normal; 
+	font-weight: bold;
+	font-size: 34pt; 
+	text-align: center;
+	color: #F1A1DE; 
+	background: #3A3A3A; }
+	
+h2{ 
+	font-family: Arial, Verdana; 
+	font-style: normal; 
+	font-weight: bold;
+	font-size: 30pt; 
+	text-align: center;
+	color: #FFFFFF; 
+	background: #3A3A3A; }
+	
+h3{ 
+	font-family: Arial, Verdana; 
+	font-style: normal; 
+	font-weight: bold;
+	font-size: 18pt; 
+	color: #FFFFFF; 
+	background: #3A3A3A; }
+	
+h4{ 
+	font-family: Arial, Verdana; 
+	font-style: normal; 
+	font-weight: bold;
+	font-size: 14pt; 
+	color: #FFFFFF; 
+	background: #3A3A3A; }
+	
+h5{ 
+	font-family: Verdana, Geneva; 
+	font-style: normal; 
+	font-weight: normal;
+	font-size: 12pt; 
+	color: #FFFFFF;
+	background: #3A3A3A;}
+
+body { 
+	font-family: Verdana, Geneva; 
+	font-style: normal; 
+	font-size: 16pt; 
+	color: #FFFFFF;
+	background: #3A3A3A; }
+	
+#homeImage {
+  display: block;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto; }	
+		
+table {
+  width: 45%; }
+  
+ table.Login {
+ margin: 0 auto;
+ width: 90%; }
+	
+td { 
+	font-family: Verdana, Geneva; 
+	font-size: 16pt; 
+	padding-left: 15px;
+	padding-right: 15px;
+	color: black; 
+	background: white; }
+	
+td.heading{ 
+	font-weight: bold; 
+	font-size: 24pt; 
+	text-align: center;
+	padding-left: 15px;
+	padding-right: 15px;
+	color: white; 
+	background: #5D5E58; }	
+	
+td.heading a{ 
+	text-decoration: none; }	
+	
+td.heading2 { 
+	font-weight: bold; 
+	font-size: 18pt; }	
+
+input {
+	width: 200px;
+	font-size: 14pt; 
+	color: black;
+}
+
+.button {
+	background-color: #F1A1DE;
+	color: white;
+	font-size: 18pt; 
+}
+	
+.navbar {
+  overflow: hidden;
+  background-color: #3A3A3A;
+}
+
+.navbar a {
+  float: left;
+  font-size: inherit;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition-duration: 0.5s;
+}
+
+.navbar a:hover {
+  background-color: #F1A1DE;
+}
+
+.linked {
+  font-size: inherit;
+  color: white;
+  text-decoration: none;
+  transition-duration: 0.5s;
+	font-weight: bold; 
+	text-align: left;
+	float: none;	
+}
+
+.linked:hover{
+	background-color: #F1A1DE;
+}
+
